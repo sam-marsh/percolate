@@ -72,7 +72,7 @@ void explore_cluster(lattice l, site *initial, box b, stack *stack, bool **visit
 
 /**
  * given a region to search in, finds clusters within the region,
- * and returns the clusters which leave the north or east border to the caller 
+ * and returns the clusters which leave the north border to the caller 
  */
 cluster **find_global_clusters(lattice l, int initial_id, box b, int *max_size, int *n_clusters)
 {
