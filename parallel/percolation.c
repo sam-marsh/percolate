@@ -176,26 +176,26 @@ bool percolation(lattice l, bool rows, bool cols, int *max_cluster)
 	{
 		//create bounds for overlay lattice box
 		box b;
-	    b.il = il;
-	    b.iu = il + l.n / n_boxes - 1;
-	    b.jl = 0;
-	    b.ju = l.n - 1;
+		b.il = il;
+		b.iu = il + l.n / n_boxes - 1;
+		b.jl = 0;
+		b.ju = l.n - 1;
 		
 		//if doesn't evenly divide n, add 1 more row if leftover
-	    if (id % n_boxes < extra)
-	    {
-	    	++b.iu;
-	    }
+		if (id % n_boxes < extra)
+		{
+			++b.iu;
+		}
 
 	    //store info on this box into array
-	    boxes[id] = b;
-	    start_labels[id] = start_label;
+		boxes[id] = b;
+		start_labels[id] = start_label;
 
 		//update il and jl for next overlay box
 		il = b.iu + 1;
 
 		//increment start label to keep unique amongst boxes
-	    start_label += BOX_WIDTH(b) * BOX_HEIGHT(b) / 2;
+		start_label += BOX_WIDTH(b) * BOX_HEIGHT(b) / 2;
 	}
 
 	//parallel speedup comes here! process boxes on different threads
