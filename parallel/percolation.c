@@ -144,7 +144,7 @@ cluster **find_global_clusters(lattice l, int initial_id, box b, int *max_size, 
 
 /**
  * perform percolation analysis on the given lattice
- * pass in a lattice, whether to check rows, cols, how many threads in use
+ * pass in a lattice, whether to check rows, cols, and int address to store max cluster in
  * returns whether lattice percolates, and the size of the max cluster
  */
 bool percolation(lattice l, bool rows, bool cols, int *max_cluster)
