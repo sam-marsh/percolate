@@ -56,7 +56,7 @@ void percolate_from(lattice l, stack stack, bool **visited, bool *rows, bool *co
         site *curr = stack_pop(&stack);
         int i = curr->i;
         int j = curr->j;
-        
+
         if (visited[i][j])
         {
             continue;
@@ -77,10 +77,11 @@ void percolate_from(lattice l, stack stack, bool **visited, bool *rows, bool *co
             if (curr->bond[k])
             {
                 site *n = neighbour(l, curr, k);
-                if (!visited[n->i][n->j])
+                if (!visited[n->i][n->j] && !n->on_stack)
                 {
                     //add to stack if unvisited neighbour
                     stack_push(&stack, n);
+                    n->on_stack = true;
                 }
             }
         }

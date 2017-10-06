@@ -25,6 +25,7 @@ lattice create_lattice(int n)
         {
             l.sites[i][j].i = i;
             l.sites[i][j].j = j;
+            l.sites[i][j].on_stack = false;
         }
     }
     return l;

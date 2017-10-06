@@ -22,6 +22,7 @@ typedef struct
     bool occupied; //whether site is open or not
     bool bond[N_DIRECTIONS]; //whether it has a bond to N E S W neighbours
     struct _cluster *cluster; //what cluster it belongs to
+    bool on_stack; //make dfs more space efficient by only adding to stack once
 } site;
 
 //info on groups of sites connected by bonds 

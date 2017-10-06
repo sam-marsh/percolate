@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     char *seed_type = argv[2];
     int percolation_type = atoi(argv[3]);
 
-    if (n <= 0 || p < 0 || p > 1 || percolation_type < 0 || percolation_type > 2)
+    if (n <= 1 || p < 0 || p > 1 || percolation_type < 0 || percolation_type > 2)
     {
         exit_incorrect_args();
     }

@@ -60,10 +60,11 @@ void explore_cluster(lattice l, site *initial, box b, stack *stack, bool **visit
 				}
 
 				site *n = neighbour(l, s, d);
-				if (!visited[n->i - b.il][n->j - b.jl])
+				if (!visited[n->i - b.il][n->j - b.jl] && !n->on_stack)
 				{
 					//add onto stack if not visited yet
 					stack_push(stack, n);
+					n->on_stack = true;
 				}
 			}
 		}

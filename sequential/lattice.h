@@ -18,6 +18,7 @@ typedef struct
     int i, j; //coordinates in lattice
     bool occupied; //whether site is open or not
     bool bond[N_DIRECTIONS]; //whether it has a bond to N E S W neighbours
+    bool on_stack; //make dfs more space efficient by only adding to stack once
 } site;
 
 //a square lattice holding sites
