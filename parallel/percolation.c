@@ -187,7 +187,7 @@ bool percolation(lattice l, bool rows, bool cols, int *max_cluster)
 			++b.iu;
 		}
 
-	    //store info on this box into array
+		//store info on this box into array
 		boxes[id] = b;
 		start_labels[id] = start_label;
 

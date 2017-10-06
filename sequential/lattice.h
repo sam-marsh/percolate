@@ -12,17 +12,19 @@
 #define SOUTH         2
 #define WEST          3
 
+//info on each lattice site
 typedef struct
 {
-    int i, j;
-    bool occupied;
-    bool bond[N_DIRECTIONS];
+    int i, j; //coordinates in lattice
+    bool occupied; //whether site is open or not
+    bool bond[N_DIRECTIONS]; //whether it has a bond to N E S W neighbours
 } site;
 
+//a square lattice holding sites
 typedef struct
 {
-    site **sites;
-    int n;
+    site **sites; //a 2d square array of sites
+    int n; //dimensions
 } lattice;
 
 lattice create_lattice(int n);
